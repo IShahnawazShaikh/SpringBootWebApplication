@@ -15,8 +15,8 @@ import com.prolog.SpringBootWebApplication.beans.NewUser;
 public class ServiceDao {
 	@PersistenceContext
 	  EntityManager entityManager;
-public void save(BooksContributed bookObj) {
-	entityManager.persist(bookObj);
+public void save(BooksContributed book) {
+	entityManager.persist(book);
   }
 public void addUser(NewUser user) {
 	 entityManager.persist(user);
@@ -37,4 +37,3 @@ public List<BooksContributed> bookCpp() {
 	return entityManager.createNamedQuery("find_all_bookCpp").setParameter("type", "Cpp").getResultList();
 }
 }
-
